@@ -42,6 +42,10 @@ import { JsonInputWidgetComponent } from '@home/components/widget/lib/json-input
 import { QrCodeWidgetComponent } from '@home/components/widget/lib/qrcode-widget.component';
 import { MarkdownWidgetComponent } from '@home/components/widget/lib/markdown-widget.component';
 import { SelectEntityDialogComponent } from '@home/components/widget/lib/maps/dialogs/select-entity-dialog.component';
+import {H2mcAlarmComponent} from "@home/components/widget/h2mc/h2mc-alarm/h2mc-alarm.component";
+import {H2mcComponent} from "@home/components/widget/h2mc/h2mc.component";
+import {H2mcHelpComponent} from "@home/components/widget/h2mc/h2mc-help/h2mc-help.component";
+import {H2mcHelpImgComponent} from "@home/components/widget/h2mc/h2mc-help/h2mc-help-img/h2mc-help-img.component";
 
 @NgModule({
   declarations:
@@ -64,7 +68,11 @@ import { SelectEntityDialogComponent } from '@home/components/widget/lib/maps/di
       NavigationCardWidgetComponent,
       QrCodeWidgetComponent,
       MarkdownWidgetComponent,
-      SelectEntityDialogComponent
+      SelectEntityDialogComponent,
+      H2mcComponent,
+      H2mcAlarmComponent,
+      H2mcHelpComponent,
+      H2mcHelpImgComponent
     ],
   imports: [
     CommonModule,
@@ -88,7 +96,10 @@ import { SelectEntityDialogComponent } from '@home/components/widget/lib/maps/di
     NavigationCardsWidgetComponent,
     NavigationCardWidgetComponent,
     QrCodeWidgetComponent,
-    MarkdownWidgetComponent
+    MarkdownWidgetComponent,
+    H2mcComponent,
+    H2mcAlarmComponent,
+    H2mcHelpComponent
   ],
   providers: [
     CustomDialogService,

@@ -1,0 +1,33 @@
+<mat-tab-group>
+  <mat-tab label="首页预览">
+    <div class="help-container">
+      <h3>一、首页预览</h3>
+      <tb-h2mc-help-img [img_src]="'../assets/images/首页1.png'"></tb-h2mc-help-img>
+
+      <h3>二、操作栏介绍</h3>
+      <tb-h2mc-help-img [img_src]="'../assets/images/首页1-告警处理1.png'"></tb-h2mc-help-img>
+      <tb-h2mc-help-img [img_src]="'../assets/images/首页1-设备详情1.png'"></tb-h2mc-help-img>
+      <tb-h2mc-help-img [img_src]="'../assets/images/首页1-设备详情2.png'"></tb-h2mc-help-img>
+      <tb-h2mc-help-img [img_src]="'../assets/images/首页1-跳转客户详情页.png'"></tb-h2mc-help-img>
+      <h5>2.1 点击每一行查看设备对应客户信息</h5>
+      <tb-h2mc-help-img [img_src]="'../assets/images/首页1-查看客户详情.png'"></tb-h2mc-help-img>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="应答与清除">
+    <div class="help-container">
+      <h3>一、应答</h3>
+      <h5>1.1 点击√对告警进行应答，处理状态变为“激活已确认”，表明该报警已知晓，但未处理。</h5>
+      <tb-h2mc-help-img [img_src]="'../assets/images/首页1-应答.png'"></tb-h2mc-help-img>
+
+      <h3>二、处理</h3>
+      <h5>2.1 处理：点击×对告警进行清除，处理状态变为“清除未确认”，表明该报警已处理。</h5>
+      <h5>2.2 仅当“应答”和“告警”均点击后，才可将该条记录删除</h5>
+      <h5>2.3 本界面仅显示最近12小时告警记录，更长时间告警记录请点击“历史记录”进行查看</h5>
+      <tb-h2mc-help-img [img_src]="'../assets/images/首页1-清除.png'"></tb-h2mc-help-img>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+
+

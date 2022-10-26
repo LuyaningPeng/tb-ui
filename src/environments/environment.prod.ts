@@ -15,7 +15,7 @@
 ///
 
 export const environment = {
-  appTitle: '海宏微码',
+  appTitle: '海容物联网',
   production: true,
 // @ts-ignore
   tbVersion: TB_VERSION,

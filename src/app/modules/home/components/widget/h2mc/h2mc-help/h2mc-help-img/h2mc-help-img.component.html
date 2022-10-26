@@ -1,0 +1,4 @@
+<img [src]="img_src" alt="暂无图片" class="help-img" (click)="show=!show">
+<div class="img-container" *ngIf="show">
+  <img [src]="img_src" alt="暂无图片" (click)="show=!show">
+</div>

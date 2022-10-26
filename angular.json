@@ -97,7 +97,8 @@
               "node_modules/prismjs/components/prism-json.min.js",
               "node_modules/prismjs/components/prism-javascript.min.js",
               "node_modules/prismjs/components/prism-typescript.min.js",
-              "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.min.js"
+              "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.min.js",
+              "node_modules/three/build/three.js"
             ],
             "customWebpackConfig": {
               "path": "./extra-webpack.config.js"
@@ -130,7 +131,8 @@
               "jstree",
               "qrcode",
               "wcwidth",
-              "leaflet-polylinedecorator"
+              "leaflet-polylinedecorator",
+              "ngx-daterangepicker-material"
             ]
           },
           "configurations": {

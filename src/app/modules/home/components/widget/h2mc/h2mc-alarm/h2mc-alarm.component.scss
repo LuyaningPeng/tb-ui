@@ -1,0 +1,43 @@
+.entity-card {
+  max-width: 10rem;
+  margin: 1rem 1rem auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.entity-card-content {
+  padding: 0 0;
+}
+
+.entity-card-img{
+  width: 80%;
+  margin: 0;
+}
+
+.card-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.survey-card-context {
+  flex: 1;
+  width: 300px;
+  min-width: 300px;
+  height: 210px;
+  margin: 10px;
+  text-align: left;
+}
+
+.customer-info{
+  font-size: 0.8rem;
+}
+
+#header {
+  text-align: center;
+}
+
+mat-slide-toggle {
+  float: right;
+  font-size: 0.8rem;
+}

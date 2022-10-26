@@ -219,9 +219,17 @@
                   matTooltipPosition="above">
             <mat-icon>{{ isEdit ? 'close' : 'edit' }}</mat-icon>
           </button>
+          <button mat-fab color="accent" class="tb-btn-footer"
+                  [ngClass]="{'tb-hide': true}"
+                  [disabled]="isLoading$ | async"
+                  (click)="toggleDashboardEditMode()"
+                  matTooltip="{{ (isEdit ? 'action.decline-changes': 'action.enter-edit-mode') | translate }}"
+                  matTooltipPosition="above">
+            <mat-icon>{{ isEdit ? 'close' : 'edit' }}</mat-icon>
+          </button>
         </section>
         <section *ngIf="!embedded" data-html2canvas-ignore class="tb-powered-by-footer" [ngStyle]="{'color': dashboard.configuration.settings.titleColor}">
-          <span>Powered by <a href="https://thingsboard.io" target="_blank">Thingsboard v.{{ thingsboardVersion }}</a></span>
+<!--          <span>Powered by <a href="https://thingsboard.io" target="_blank">Thingsboard v.{{ thingsboardVersion }}</a></span>-->
         </section>
       </mat-drawer-content>
       <mat-drawer class="tb-details-drawer"

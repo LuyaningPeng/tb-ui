@@ -227,6 +227,151 @@ export class MenuService {
     return homeSections;
   }
 
+  // private buildTenantAdminMenu(authState: AuthState): Array<MenuSection> {
+  //   const sections: Array<MenuSection> = [];
+  //   sections.push(
+  //     {
+  //       id: guid(),
+  //       name: 'home.home',
+  //       type: 'link',
+  //       path: '/home',
+  //       icon: 'home'
+  //     },
+  //     {
+  //       id: guid(),
+  //       name: 'rulechain.rulechains',
+  //       type: 'link',
+  //       path: '/ruleChains',
+  //       icon: 'settings_ethernet'
+  //     },
+  //     {
+  //       id: guid(),
+  //       name: 'customer.customers',
+  //       type: 'link',
+  //       path: '/customers',
+  //       icon: 'supervisor_account'
+  //     },
+  //     {
+  //       id: guid(),
+  //       name: 'asset.assets',
+  //       type: 'link',
+  //       path: '/assets',
+  //       icon: 'domain'
+  //     },
+  //     {
+  //       id: guid(),
+  //       name: 'device.devices',
+  //       type: 'link',
+  //       path: '/devices',
+  //       icon: 'devices_other'
+  //     },
+  //     {
+  //       id: guid(),
+  //       name: 'device-profile.device-profiles',
+  //       type: 'link',
+  //       path: '/deviceProfiles',
+  //       icon: 'mdi:alpha-d-box',
+  //       isMdiIcon: true
+  //     },
+  //     {
+  //       id: guid(),
+  //       name: 'ota-update.ota-updates',
+  //       type: 'link',
+  //       path: '/otaUpdates',
+  //       icon: 'memory'
+  //     },
+  //     {
+  //       id: guid(),
+  //       name: 'entity-view.entity-views',
+  //       type: 'link',
+  //       path: '/entityViews',
+  //       icon: 'view_quilt'
+  //     }
+  //   );
+  //   if (authState.edgesSupportEnabled) {
+  //     sections.push(
+  //       {
+  //         id: guid(),
+  //         name: 'edge.edge-instances',
+  //         type: 'link',
+  //         path: '/edgeInstances',
+  //         icon: 'router'
+  //       },
+  //       {
+  //         id: guid(),
+  //         name: 'edge.management',
+  //         type: 'toggle',
+  //         path: '/edgeManagement',
+  //         height: '40px',
+  //         icon: 'settings_input_antenna',
+  //         pages: [
+  //           {
+  //             id: guid(),
+  //             name: 'edge.rulechain-templates',
+  //             type: 'link',
+  //             path: '/edgeManagement/ruleChains',
+  //             icon: 'settings_ethernet'
+  //           }
+  //         ]
+  //       }
+  //     );
+  //   }
+  //   sections.push(
+  //     {
+  //       id: guid(),
+  //       name: 'widget.widget-library',
+  //       type: 'link',
+  //       path: '/widgets-bundles',
+  //       icon: 'now_widgets'
+  //     },
+  //     {
+  //       id: guid(),
+  //       name: 'dashboard.dashboards',
+  //       type: 'link',
+  //       path: '/dashboards',
+  //       icon: 'dashboards'
+  //     },
+  //     {
+  //       id: guid(),
+  //       name: 'audit-log.audit-logs',
+  //       type: 'link',
+  //       path: '/auditLogs',
+  //       icon: 'track_changes'
+  //     },
+  //     {
+  //       id: guid(),
+  //       name: 'api-usage.api-usage',
+  //       type: 'link',
+  //       path: '/usage',
+  //       icon: 'insert_chart'
+  //     },
+  //     {
+  //       id: guid(),
+  //       name: 'admin.system-settings',
+  //       type: 'toggle',
+  //       path: '/settings',
+  //       height: '80px',
+  //       icon: 'settings',
+  //       pages: [
+  //         {
+  //           id: guid(),
+  //           name: 'admin.home-settings',
+  //           type: 'link',
+  //           path: '/settings/home',
+  //           icon: 'settings_applications'
+  //         },
+  //         {
+  //           id: guid(),
+  //           name: 'resource.resources-library',
+  //           type: 'link',
+  //           path: '/settings/resources-library',
+  //           icon: 'folder'
+  //         }
+  //       ]
+  //     }
+  //   );
+  //   return sections;
+  // }
   private buildTenantAdminMenu(authState: AuthState): Array<MenuSection> {
     const sections: Array<MenuSection> = [];
     sections.push(
@@ -264,6 +409,20 @@ export class MenuService {
         type: 'link',
         path: '/devices',
         icon: 'devices_other'
+      },
+      {
+        id: guid(),
+        name: '历史记录',
+        type: 'link',
+        path: 'dashboards/f54e79a0-0a6c-11ed-8723-29871c95c35b',
+        icon: 'notification_important'
+      },
+      {
+        id: guid(),
+        name: '帮助',
+        type: 'link',
+        path: 'dashboards/56d6f7c0-08cd-11ed-b6e5-8df16fd7d716',
+        icon: 'pan_tool'
       },
       {
         id: guid(),
@@ -372,7 +531,6 @@ export class MenuService {
     );
     return sections;
   }
-
   private buildTenantAdminHome(authState: AuthState): Array<HomeSection> {
     const homeSections: Array<HomeSection> = [];
     homeSections.push(

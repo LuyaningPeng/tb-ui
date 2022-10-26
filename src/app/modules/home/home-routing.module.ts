@@ -20,6 +20,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { AuthGuard } from '@core/guards/auth.guard';
 import { StoreModule } from '@ngrx/store';
+import {H2mcGuard} from "@core/guards/h2mc.guard";
 
 const routes: Routes = [
   { path: '',
@@ -31,7 +32,7 @@ const routes: Routes = [
       }
     },
     canActivate: [AuthGuard],
-    canActivateChild: [AuthGuard],
+    canActivateChild: [AuthGuard, H2mcGuard],
     loadChildren: () => import('./pages/home-pages.module').then(m => m.HomePagesModule)
   }
 ];

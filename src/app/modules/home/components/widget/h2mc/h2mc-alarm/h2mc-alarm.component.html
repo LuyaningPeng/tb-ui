@@ -1,0 +1,20 @@
+<h2 id="header">告警</h2>
+
+<!--<mat-slide-toggle [checked]="checked">闪烁开关</mat-slide-toggle>-->
+
+<div class="card-wrap">
+  <div class="card-context" *ngFor="let entity of entityList">
+    <mat-card class="entity-card">
+      <img class="entity-card-img" mat-card-image [src]="current_src" alt="暂无图片" (click)="goCustomerDetail(entity.customerId)">
+
+      <mat-card-content class="entity-card-content" style="text-align: left">
+        <span class="customer-info">设备地址：{{entity.address}}</span><br>
+        <span class="customer-info">客户姓名：{{entity.customerName}}</span><br>
+        <span class="customer-info">联系方式：{{entity.customerPhone}}</span><br>
+        <!--        <span class="customer-info">用户ID：{{entity.customerId}}</span><br>-->
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+

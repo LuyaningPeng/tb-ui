@@ -80,6 +80,7 @@ export class TelemetryWebsocketService implements TelemetryService {
               private authService: AuthService,
               private ngZone: NgZone,
               @Inject(WINDOW) private window: Window) {
+    this.log(`Enter TelemetryWebsocketService: ${this}`);
     this.store.pipe(select(selectIsAuthenticated)).subscribe(
       () => {
         this.reset(true);
@@ -127,6 +128,8 @@ export class TelemetryWebsocketService implements TelemetryService {
     );
     this.subscribersCount++;
     this.publishCommands();
+
+    this.log("Begin to subscribe cmds");
   }
 
   public update(subscriber: TelemetrySubscriber) {
@@ -175,6 +178,8 @@ export class TelemetryWebsocketService implements TelemetryService {
       this.reconnectSubscribers.delete(subscriber);
       this.subscribersCount--;
       this.publishCommands();
+
+      this.log('Unsubscribe...')
     }
   }
 
@@ -219,6 +224,8 @@ export class TelemetryWebsocketService implements TelemetryService {
     if (this.isOpened) {
       this.dataStream.unsubscribe();
     }
+
+    this.log('Close WebSocket')
   }
 
   private tryOpenSocket() {
@@ -253,6 +260,7 @@ export class TelemetryWebsocketService implements TelemetryService {
         openObserver: {
           next: () => {
             this.onOpen();
+            this.log(`Try to open WebSocket --- ${uri}`)
           }
         },
         closeObserver: {
@@ -267,10 +275,10 @@ export class TelemetryWebsocketService implements TelemetryService {
         this.ngZone.runOutsideAngular(() => {
           this.onMessage(message as WebsocketDataMsg);
         });
-    },
-    (error) => {
-      this.onError(error);
-    });
+      },
+      (error) => {
+        this.onError(error);
+      });
   }
 
   private onOpen() {
@@ -286,6 +294,8 @@ export class TelemetryWebsocketService implements TelemetryService {
         (reconnectSubscriber) => {
           reconnectSubscriber.onReconnected();
           this.subscribe(reconnectSubscriber);
+
+          this.log('Open WebSocket')
         }
       );
       this.reconnectSubscribers.clear();
@@ -341,6 +351,9 @@ export class TelemetryWebsocketService implements TelemetryService {
     if (this.isActive) {
       if (!this.isReconnect) {
         this.reconnectSubscribers.clear();
+
+        this.log('WebSocket has closed!');
+
         this.subscribersMap.forEach(
           (subscriber) => {
             this.reconnectSubscribers.add(subscriber);
@@ -367,4 +380,9 @@ export class TelemetryWebsocketService implements TelemetryService {
       }));
   }
 
+  private log(msg: string){
+    console.log(`============ start at ${new Date().toLocaleString()}==================`);
+    console.log(msg);
+    console.log('============  end  ==================');
+  }
 }
