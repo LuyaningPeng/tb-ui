@@ -5,11 +5,13 @@ import { ThreeRoutingModule } from './three-routing.module';
 import {SharedModule} from '@shared/shared.module';
 import {HomeComponentsModule} from '@home/components/home-components.module';
 import { TestComponent } from './test/test.component';
+import { ThreeMainComponent } from './three-main/three-main.component';
 
 
 @NgModule({
   declarations: [
-    TestComponent
+    TestComponent,
+    ThreeMainComponent
   ],
   imports: [
     CommonModule,
