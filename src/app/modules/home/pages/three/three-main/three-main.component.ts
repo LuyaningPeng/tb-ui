@@ -156,6 +156,7 @@ export class ThreeMainComponent implements OnInit {
 
   // 这里的代码作用是把红色文字内容加入白框里
   private modifyDocument(id: any, color: any, value: any) {
+    console.log('Enter <modifyDocument>');
     const dom = document.getElementById(id);
     if (dom) {
       dom.style.color = color;
@@ -164,6 +165,7 @@ export class ThreeMainComponent implements OnInit {
   }
 
   private addCSS3DLabelToScene() {
+    console.log('Enter <addCSS3DLabelToScene>');
     const element = document.getElementById('WebGL-output');
 
     // 把生成的CSSDOM对象处理成three的节点对象
@@ -179,7 +181,7 @@ export class ThreeMainComponent implements OnInit {
   }
 
   private onMouseClick(event: any) {
-    // console.log('===');
+    console.log('Enter <onMouseClick>');
     const mousePoint = new THREE.Vector2();
     // mousePoint.x = (event.clientX / window.innerWidth) * 2 - 1;
     // mousePoint.y = -(event.clientY / window.innerHeight) * 2 + 1;
